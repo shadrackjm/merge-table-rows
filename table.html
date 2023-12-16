@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge two or more rows with the same data.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- add the library link here -->
+    <script src="./row_merger/dist/row-merge-bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3 class="card-title my-2">Merge two or more adjacent rows with the same data.</h3>
+        <table class="table table-sm table-bordered" id="table">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Exam</th>
+                    <th>Marks</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>shadrack</td>
+                    <td>18</td>
+                    <td>Biology</td>
+                    <td>89</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                    <td>18</td>
+                    <td>Biology</td>
+                    <td>89</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>john</td>
+                    <td>19</td>
+                    <td>Physics</td>
+                    <td>90</td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>issah</td>
+                    <td>18</td>
+                    <td>Biology</td>
+                    <td>89</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>issah</td>
+                    <td>18</td>
+                    <td>Chemistry</td>
+                    <td>89</td>
+                    <td>B</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(function(){
+            // this will merge all adjacent rows with the same data in an entire table
+            var table = $('#table').rowMerge({
+                // just count from 1 to nth number of your table columns
+                excludedColumns: [3],
+            });
+        });
+    </script>
+</body>
+</html>
